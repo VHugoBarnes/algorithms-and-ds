@@ -1,0 +1,15 @@
+{
+  "name": "algorithms-and-ds",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite src/index",
+    "dev:greedy": "vite src/greedy/index"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vitest": "^0.34.6"
+  }
+}
