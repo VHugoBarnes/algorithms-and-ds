@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite src/index",
-    "dev:greedy": "vite src/greedy/index"
+    "start": "vitest"
   },
   "devDependencies": {
     "typescript": "^5.0.2",

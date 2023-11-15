@@ -1,4 +1,4 @@
-type Item = {
+export type Item = {
   value: number,
   weight: number,
   ratio?: number;
@@ -22,6 +22,8 @@ type Item = {
  * @returns how much value we took from the items
  */
 export const knapsackFractional = (items: Item[], capacity: number) => {
+  if (capacity < 0) return 0;
+
   //? Calculate the ratio based on value/weight for each item
   items.forEach(item => {
     item.ratio = item.value / item.weight;
