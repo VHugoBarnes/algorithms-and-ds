@@ -33,6 +33,10 @@ test("weird scenario #6", () => {
   expect(verifyingAlienDictionary([], "")).toBe(true);
 });
 
+test("weird scenario #7", () => {
+  expect(verifyingAlienDictionary(["allie", "biweekly", "mother", "wrestling"], "abcdefghijklamnopqrstuvwxyz")).toBe(false);
+});
+
 /**
  * habito, hacer, lectura, sonreir
  * 
