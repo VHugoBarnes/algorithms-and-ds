@@ -38,7 +38,7 @@ export const verifyingAlienDictionary = (words: string[], alphabet: string) => {
 
 
   //! O(z)
-  for (let i = 0; i < words.length - 1; i++) {
+  for (let i = 0; i < words.length; i++) {
     // If we don't find a second word to compare
     // that means the array finished.
     if (words[i + 1] === undefined) return true;
