@@ -28,18 +28,20 @@ test("result is 13, with consecutive", () => {
 test("result is 1, with consecutive", () => {
   expect(trappingRainWater([3, 2, 1, 2, 1])).toBe(1);
 });
+
+test("result is 1", () => {
+  expect(trappingRainWater([5, 4, 1, 2])).toBe(1);
+});
+
 /**
- * This solution uses these aux variables
- * p1, p2, pacc, acc, toSubstractAcc, tempAcc
+ * - pointer #1 starts at the start of the array
+ * - pointer #2 starts at the end of the array
  * 
- * - starts the loop
- * - takes item and compares it to left and right side.
- * - if its greater than right side, it becomes pointer,
- *   - if pointer #1 is available, takes it and [continue with loop]
- *   - if pointer #1 is not available, pointer #2 will be
- *     - if pointer #2 is available, perform calculation
- *       - check which pointer is smallest, and multiply that by ((p2 - p1) - 1), 
- *         then substract what is inside `toSubstractAcc` and `tempAcc`, next, sum that value to `acc` and set `toSubstractAcc` to 0.
- *       - If p2 >= p1 set p1 to p2 and clear p2 value (null).
- *       - If p2 < p1 save what was added in acc to `tempAcc`.
+ * perform these actions while the pointer #2 is greater than pointer #1
+ *   - which pointer has the smallest value?
+ *   - select pointer with smallest value
+ *      - move pointer
+ *      - perform: (Max(p1, px[i])) - px[i]
+ *      - add result to accumulator variable
+ *   - if both pointer has the same value, select pointer 1
  */
