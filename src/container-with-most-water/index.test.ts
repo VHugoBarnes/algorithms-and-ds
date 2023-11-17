@@ -17,6 +17,10 @@ test("container with most water is 25", () => {
   expect(containerWithMostWater([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBe(25);
 });
 
+test("container with most water is 0", () => {
+  expect(containerWithMostWater([])).toBe(0);
+});
+
 /**
  * Two pointers (p1, p2), one at the start, one at the end.
  * - Calculate the water with distance (p2-p1) minus minum height. Save result in `water`
