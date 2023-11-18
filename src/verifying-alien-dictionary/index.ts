@@ -1,10 +1,10 @@
-export const verifyingAlienDictionary = (words: string[], alphabet: string) => {
+export const verifyingAlienDictionary = (words: string[], order: string) => {
   let mappedAlphabet: { [key: string]: number } = {};
 
   //! O(n)
   // Convert alphabet to mapped object
-  for (let i: number = 0; i < alphabet.length; i++) {
-    mappedAlphabet[alphabet[i]] = i;
+  for (let i: number = 0; i < order.length; i++) {
+    mappedAlphabet[order[i]] = i;
   }
 
   //! O(w)
