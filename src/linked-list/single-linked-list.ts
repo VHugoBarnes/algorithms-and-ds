@@ -54,6 +54,40 @@ export class SingleLinkedList<T> {
     return null;
   }
 
+  print(): void {
+    const values = [];
+    let currentNode = this.head;
+
+    while (currentNode !== null) {
+      values.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+
+    console.log(values);
+  }
+
+  insert(index: number, value: T): void {
+    if (index === 0) {
+      this.prepend(value);
+    }
+
+    const newNode = new ListNode(value);
+
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    while (currentNode !== null) {
+      if ((currentIndex + 1) === index) {
+        const nextNode = currentNode.next;
+        currentNode.next = newNode;
+        newNode.next = nextNode;
+      }
+
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+  }
+
   reverse(): void {
     let prev = null;
     let current = this.head;
@@ -66,3 +100,11 @@ export class SingleLinkedList<T> {
     [this.head, this.tail] = [this.tail, this.head];
   }
 }
+
+const sll = new SingleLinkedList();
+sll.append(5);
+sll.append(10);
+sll.append(12);
+sll.append(104);
+sll.insert(2, 666);
+sll.print();
